@@ -1,0 +1,81 @@
+#!/bin/bash
+
+
+## This script is intended for the purposes to help facilitate in installing more popular and useful software.
+## That way you dont have to way for the Ubuntu Software Center to install 1 program at a time.
+
+echo "Prepare to input your password"
+sleep 4
+
+
+echo "Installing softwares from main repo's first"
+
+sudo apt-get install preload && 
+sudo apt-get install deluge &&
+sudo apt-get install dropbox &&
+sudo apt-get install hplip-gui &&
+sudo apt-get install shutter &&
+sudo apt-get install skype &&
+sudo apt-get install k3b &&
+sudo apt-get install radiotray &&
+sudo apt-get install smplayer &&
+sudo apt-get install variety && 
+sudo apt-get install guvcview &&
+sudo apt-get install virtualbox-4.3 &&
+sudo apt-get install kdenlive -y &&
+sudo apt-get install gecko-mediaplayer -y &&
+sudo apt-get install gparted -y &&
+
+
+sleep 5
+
+
+
+
+echo "Adding Repo List for secondary installs"
+sudo add-apt-repository ppa:mumble/release -y &&
+sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder -y &&
+sudo add-apt-repository ppa:pipelight/stable -y &&
+sudo add-apt-repository ppa:webupd8team/java -y &&
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y &&
+sudo apt-add-repository ppa:teejee2008/ppa -y &&
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager -y &&
+
+
+sleep 4
+
+echo "Updating Repo's"
+
+sudo apt-get update
+
+sleep 4
+
+echo "Installing Secondary Software"
+
+sleep 4
+
+sudo apt-get install mumble && 
+sudo apt-get install simplescreenrecorder -y && 
+sudo apt-get install --install-recommends pipelight-multi -y &&
+sudo pipelight-plugin --update && 
+sudo pipelight-plugin --enable silverlight -y &&
+sudo pipelight-plugin --enable widevine -y &&
+sudo apt-get install oracle-java8-installer -y &&
+sudo apt-get install grub-customizer -y &&
+sudo apt-get install aptik -y &&
+sudo apt-get install y-ppa-manager -y &&
+
+
+echo "Upgrading Repo's"
+sleep 4
+sudo apt-get upgrade -y
+
+
+echo "Done Installing Softwares"
+sleep 4
+
+echo "Cleaning Up"
+
+sudo apt-get autoremove -y
+
+
